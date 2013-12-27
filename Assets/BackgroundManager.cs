@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CloseBackgroundManager : MonoBehaviour {
+public class BackgroundManager : MonoBehaviour {
 	public GameObject[] prefabs; 
 	Queue backgroundObjects;
 	public float distance = 55f;
+	public float heightOnHorizon = 0f;
 	private float startinPos;
 	// Use this for initialization
-	void Start () {
+	public virtual void Start () {
 		
 //		Plane teoricPlane = new Plane(new Vector3(0,0,-1),new Vector3( 0, 0 , 55f));
 		Debug.Log("vec 3 up : " + Vector3.up);	
@@ -60,7 +61,7 @@ public class CloseBackgroundManager : MonoBehaviour {
 				Random.Range(.3f,1f) * mountain.transform.localScale.z
 				);
 			startingPointX = startingPointX +  mountain.transform.localScale.x *.5f ;
-			mountain.transform.position = new Vector3( startingPointX , -15f,distance);
+			mountain.transform.position = new Vector3( startingPointX , heightOnHorizon,distance);
 			startingPointX = startingPointX +  mountain.transform.localScale.x *.5f ;
 			
 		}
