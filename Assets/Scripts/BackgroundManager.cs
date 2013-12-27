@@ -4,13 +4,14 @@ using System.Collections.Generic;
 
 
 public class BackgroundManager : MonoBehaviour {
-	public GameObject[] prefabs; 
+	public GameObject billBoard; 
 	Queue backgroundObjects;
 	public float distance = 55f;
 	public float heightOnHorizon = 0f;
 	private float startinPos;
 	public float startingPointX;
 	public Queue objects = new Queue();
+	public Texture2D[] textures; 
 	public GameObject player;
 	public Dictionary< GameObject , Vector3> testDict = new Dictionary<GameObject,Vector3 >();
 
@@ -63,7 +64,8 @@ public class BackgroundManager : MonoBehaviour {
 		}
 		startingPointX = leftMost.x;
 		for (int i =0 ; i < 10; i++ ) {
-			GameObject mountain = (GameObject) Instantiate(prefabs[0]); 
+			GameObject mountain = (GameObject) Instantiate(billBoard); 
+			mountain.transform.parent = transform;
 //			List<Vector3> bundle = new List<Vector3>();
 //			if (!if
 			testDict.Add (mountain, mountain.transform.localScale);
@@ -81,6 +83,8 @@ public class BackgroundManager : MonoBehaviour {
 
 		//				);
 //		GameObject prefab = prefabBundle[1];
+		prefab.renderer.material.SetTexture(0,textures[Random.Range(0, textures.Length)]);
+		
 		Vector3 originalScale;
 		testDict.TryGetValue(prefab,out originalScale);
 		prefab.transform.localScale = new Vector3(

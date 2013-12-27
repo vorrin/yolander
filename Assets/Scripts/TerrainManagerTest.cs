@@ -40,23 +40,25 @@ public class TerrainManagerTest : BackgroundManager {
 //		}
 //	}
 
-//	override public void PlantPrefab( GameObject prefab){
-//		//			terrain.transform.localScale = new Vector3(
-//		//				Random.Range(.3f,1f) * terrain.transform.localScale.x ,
-//		//				Random.Range(.3f,1f) * terrain.transform.localScale.y,
-//		//				Random.Range(.3f,1f) * terrain.transform.localScale.z
-//		//				);
-//		
-//		prefab.transform.localScale = new Vector3(
-//			Random.Range(.3f,1f) * prefab.transform.localScale.x ,
-//			( Random.Range(.0f,1f) * 15) ,
-//			prefab.transform.localScale.z
-//			);
-//		startingPointX = startingPointX +  prefab.renderer.bounds.size.x *.5f ;
-//		prefab.transform.position = new Vector3( startingPointX , heightOnHorizon,distance);
-//		startingPointX = startingPointX +  prefab.renderer.bounds.size.x *.5f ;
-//		objects.Enqueue(prefab);
-//	}
+	override public void PlantPrefab( GameObject prefab){
+		//			terrain.transform.localScale = new Vector3(
+		//				Random.Range(.3f,1f) * terrain.transform.localScale.x ,
+		//				Random.Range(.3f,1f) * terrain.transform.localScale.y,
+		//				Random.Range(.3f,1f) * terrain.transform.localScale.z
+		//				);
+
+		Vector3 originalScale;
+		testDict.TryGetValue(prefab,out originalScale);
+		prefab.transform.localScale = new Vector3(
+			Random.Range(.3f,1f) * originalScale.x ,
+			( Random.Range(.0f,1f) * 5 * originalScale.y) ,
+			originalScale.z
+			);
+		startingPointX = startingPointX +  prefab.renderer.bounds.size.x *.5f ;
+		prefab.transform.position = new Vector3( startingPointX , heightOnHorizon,distance);
+		startingPointX = startingPointX +  prefab.renderer.bounds.size.x *.5f ;
+		objects.Enqueue(prefab);
+	}
 
 	// Update is called once per frame
 
