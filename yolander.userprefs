@@ -1,10 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CameraController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BackgroundManager.cs">
     <Files>
-      <File FileName="Assets\BackgroundManager.cs" Line="69" Column="2" />
-      <File FileName="Assets\TerrainManagerTest.cs" Line="24" Column="13" />
-      <File FileName="Assets\CameraController.cs" Line="26" Column="19" />
+      <File FileName="Assets\Scripts\PlayerStatus.cs" Line="15" Column="18" />
+      <File FileName="Assets\Scripts\BackgroundManager.cs" Line="95" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
