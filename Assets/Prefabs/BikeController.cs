@@ -4,6 +4,7 @@ using System.Collections;
 public class BikeController : MonoBehaviour {
 	public Rigidbody backWheel;
 	public Rigidbody frontWheel;
+	public float power;
 	
 	[Range(0,100)] public float wheelMaxAngularVelocity;
 	// Use this for initialization
@@ -14,11 +15,11 @@ public class BikeController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		if (Input.GetMouseButton(0)){
 			Debug.Log("PRESS");
-			Debug.Log(backWheel.rigidbody.maxAngularVelocity);
-			backWheel.AddTorque( -new Vector3(0,0f,1110f) * 100000f, ForceMode.Acceleration);
+			Debug.Log(backWheel.rigidbody.angularVelocity);
+			backWheel.AddTorque( -new Vector3(0,0f, power), ForceMode.Acceleration);
 		}
 	}
 }
