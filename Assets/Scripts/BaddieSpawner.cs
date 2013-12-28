@@ -33,7 +33,7 @@ public class BaddieSpawner : MonoBehaviour {
 //			baddie.rigidbody.constraints = RigidbodyConstraints.FreezePositionZ| RigidbodyConstraints.FreezeRotationX| RigidbodyConstraints.FreezeRotationY| RigidbodyConstraints.FreezeRotationZ ;
 //			Debug.Log(player.rigidbody.velocity);
 			Vector3 aimingPosition = new Vector3(player.transform.position.x, player.transform.position.y + Random.Range(-aimingRandomness,aimingRandomness),player.transform.position.z);
-			baddie.rigidbody.velocity = (player.transform.position - ( spawnPosition ) )* Random.Range(0.6f,2f) +  player.rigidbody.velocity ;
+			baddie.rigidbody.velocity = (player.transform.position - ( spawnPosition ) )* Random.Range(0.8f,1.3f) +  player.rigidbody.velocity ;
 //			baddie.rigidbody.velocity =  ; 
 		}
 	}
