@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\PlayerStatus.cs" />
+     <Compile Include="Assets\Scripts\RandomManager.cs" />
      <Compile Include="Assets\Scripts\ShootRenderer.cs" />
      <Compile Include="Assets\Scripts\TerrainManagerTest.cs" />
   </ItemGroup>
