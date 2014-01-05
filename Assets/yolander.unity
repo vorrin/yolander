@@ -2148,7 +2148,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 1720944517}
   m_GameObject: {fileID: 1081275195}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: .910000026
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -2341,7 +2341,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 1720944517}
   m_GameObject: {fileID: 1213149341}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 2.26999998
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -3464,6 +3464,18 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f41bc078ed2021740a591ba25c9553d0, type: 2}
+    - target: {fileID: 5400006, guid: 1a7f4823d0907394d8ac22b332612a1c, type: 2}
+      propertyPath: m_Mass
+      value: .910000026
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400018, guid: 1a7f4823d0907394d8ac22b332612a1c, type: 2}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400008, guid: 1a7f4823d0907394d8ac22b332612a1c, type: 2}
+      propertyPath: m_Mass
+      value: 2.26999998
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a7f4823d0907394d8ac22b332612a1c, type: 2}
   m_RootGameObject: {fileID: 964290000}
