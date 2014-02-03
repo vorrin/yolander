@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-
+//[ExecuteInEditMode]
 public class BackgroundManager : MonoBehaviour {
 	public GameObject billBoard; 
 	Queue backgroundObjects;
@@ -42,10 +42,10 @@ public class BackgroundManager : MonoBehaviour {
 			
 			Vector3 leftmostWorldPoint = Camera.main.ViewportToWorldPoint(new Vector3(0f,(j/10f		),distance));
 			
-			GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-			sphere.transform.position = leftmostWorldPoint;	
-			sphere.transform.localScale = new Vector3(5f,5f,5f);
-			Debug.Log(leftmostWorldPoint);
+//			GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+//			sphere.transform.position = leftmostWorldPoint;	
+//			sphere.transform.localScale = new Vector3(5f,5f,5f);
+//			Debug.Log(leftmostWorldPoint);
 			
 		}
 		
@@ -58,9 +58,9 @@ public class BackgroundManager : MonoBehaviour {
 		if (theoricPlane.Raycast(cameraLeftMostRay, out hit)){
 			//				Debug.Log(hit.point);
 			leftMost = cameraLeftMostRay.GetPoint(hit);
-			GameObject sphere2 = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-			sphere2.transform.position = leftMost;	
-			sphere2.transform.localScale = new Vector3(5f,5f,5f);
+//			GameObject sphere2 = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+//			sphere2.transform.position = leftMost;	
+//			sphere2.transform.localScale = new Vector3(5f,5f,5f);
 		}
 		startingPointX = leftMost.x;
 		for (int i =0 ; i < 10; i++ ) {
