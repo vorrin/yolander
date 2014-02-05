@@ -2,24 +2,30 @@
 using System.Collections;
 
 public class ShoulderController : MonoBehaviour {
-
+	private Vector3 startingLocalPos; 
+	private Vector3 localPos;
 	// Use this for initialization
 	void Start () {
-	
+		startingLocalPos = transform.localPosition;
+		localPos = transform.localPosition;
 	}
-	
+
+	void FixedUpdate() { 
+		localPos = startingLocalPos;
+		transform.localPosition = startingLocalPos;
+	}
 	// Update is called once per frame
 	void Update () {
 		Vector3 mousePos = Input.mousePosition;
 		Vector3 shoulderPos = Camera.main.WorldToScreenPoint (transform.position);
-		Debug.Log("screenpoint : " + shoulderPos);
 		Vector3 difference =  mousePos - shoulderPos; 
 //		Vector3 difference =  shoulderPos - mousePos ; 
 		Debug.DrawLine (mousePos, shoulderPos);
 		Debug.DrawLine (Vector3.zero,difference);
 		
 		//THIS WHY WHY WHY, I DONT GET IT WHY WHY WHY 
-		transform.rotation =  Quaternion.Euler(new Vector3(0, 0, - Mathf.Atan2(difference.x,difference.y) * Mathf.Rad2Deg + 90f ) );
+//		rigidbody.rotation =  Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(difference.y,difference.x) * Mathf.Rad2Deg ) );
+		transform.rotation =  Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(difference.y,difference.x) * Mathf.Rad2Deg ) );
 //		transform.rotation =  Quaternion.Euler(new Vector3(0, 0,  Mathf.Atan2(difference.x,difference.y) * Mathf.Rad2Deg  ) );
 //		transform.localRotation.eulerAngles = difference;
 //		new Vector3( transform.localRotation.eulerAngles.x , 

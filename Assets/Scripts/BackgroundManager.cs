@@ -124,11 +124,10 @@ public class BackgroundManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float dist = player.GetComponent<PlayerStatus>().distanceTraveled;
+		float dist = player.GetComponentInChildren<PlayerStatus>().distanceTraveled;
 		GameObject kakka = (objects.Peek() as GameObject);
 		if (kakka.transform.position.x +  kakka.renderer.bounds.size.x * 2  < dist ){
 			PlantPrefab(objects.Dequeue() as GameObject);
-			Debug.Log(testDict.Count);
 		}
 		
 		

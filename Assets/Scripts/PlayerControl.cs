@@ -11,6 +11,7 @@ public class PlayerControl : MonoBehaviour {
 	}
     void Update() {
         if (Input.GetMouseButtonDown(0)) {
+			return;
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);	
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask	)){

@@ -46,18 +46,19 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Prefabs\BikeController.cs" />
      <Compile Include="Assets\Scripts\BackgroundManager.cs" />
      <Compile Include="Assets\Scripts\BadBoy.cs" />
      <Compile Include="Assets\Scripts\BaddieSpawner.cs" />
+     <Compile Include="Assets\Scripts\BikeController.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CameraControllerSmoothLookAt.cs" />
+     <Compile Include="Assets\Scripts\GunControl.cs" />
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\PlayerStatus.cs" />
      <Compile Include="Assets\Scripts\RandomManager.cs" />
      <Compile Include="Assets\Scripts\ShootRenderer.cs" />
+     <Compile Include="Assets\Scripts\ShoulderController.cs" />
      <Compile Include="Assets\Scripts\TerrainManagerTest.cs" />
-     <Compile Include="Assets\ShoulderController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
