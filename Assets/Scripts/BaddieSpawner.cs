@@ -10,7 +10,7 @@ public class BaddieSpawner : MonoBehaviour {
 	public GameObject[] baddies ;
 	// Use this for initialization
 	void Start () {
-		player = GameObject.Find("Player");
+		player = GameObject.Find("Player/Body");
 		nextSpawnCounter = Random.Range(minSpawnTime,maxSpawnTime);
 	}
 

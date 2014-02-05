@@ -7,12 +7,15 @@ public class GunControl : MonoBehaviour
 		public LayerMask layerMask;
 		public float gunForce = 50f;
 		public GameObject muzzle;
+		private Transform muzzleTransform; 
 		public GameObject bulletPrefab;  
+	public float bulletSpeed = 100f;
 
 		// Use this for initialization
 		void Start ()
 		{
 				muzzle = GameObject.Find ("Gun/Muzzle");
+				muzzleTransform = muzzle.transform;
 		}
 
 		void ShootPhysics ()
@@ -24,8 +27,6 @@ public class GunControl : MonoBehaviour
 						if (hit.collider.name == "MouseToWorldHitPanel") {
 								Debug.Log ("hI CLIKKATO");
 								Debug.DrawLine (transform.position, hit.point, Color.red, 30f);
-								//rigidbody.AddForce(
-								//					Vector3 localDirectionVector = ( hit.point - transform.position) + transform.position; 
 								Vector3 invertedLocalDirectionVector = (transform.position - hit.point) + transform.position;
 								Debug.DrawLine (transform.position, invertedLocalDirectionVector, Color.green, 30f);
 								Vector3 shootLineVector = invertedLocalDirectionVector - transform.position;
@@ -37,7 +38,9 @@ public class GunControl : MonoBehaviour
 
 		void FireBullet ()
 		{
-			GameObject bullet = GameObject.Instantiate (bulletPrefab, muzzle.transform.position, transform.rotation) as GameObject;
+			GameObject bullet = GameObject.Instantiate (bulletPrefab, muzzleTransform.position, transform.rotation) as GameObject;
+//			bullet.rigidbody.AddForce (muzzleTransform.right * bulletSpeed);
+			bullet.rigidbody.velocity = muzzleTransform.right * bulletSpeed;
 		}
 
 		// Update is called once per frame
