@@ -13,7 +13,7 @@ public class RandomManager : MonoBehaviour {
 
 	void Start () {
 		player = GameObject.Find("body");
-		startingHeight = player.transform.position.y;
+//		startingHeight = player.transform.position.y;
 		//startingPos =  player.transform.position;
 		//startingRot = player.transform.rotation;
 	}

@@ -14,12 +14,33 @@ public class BackgroundManager : MonoBehaviour {
 	public Texture2D[] textures; 
 	public GameObject player;
 	public Dictionary< GameObject , Vector3> testDict = new Dictionary<GameObject,Vector3 >();
+//	public bool awoken = false;
+	 
 
 	// Use this for initialization
+
+//	void clearPreviousSet() {
+//		//deletes all objects tagged: 'Managed Background' 
+//		//necessary so I can have the background precreated in the editor already, yay.
+//		GameObject[] inEditorBackgrounds = GameObject.FindGameObjectsWithTag("ManagedBackground");
+//		foreach (GameObject backgroundPrefab in inEditorBackgrounds){
+//			Destroy(backgroundPrefab);
+//		}
+//	}
+////
+//	void Awake() {
+//		Start ();
+//		this.awoken = true;
+////		clearPreviousSet ();
+//
+//		}
+
 	void Start () {
-		
+
+
 		player = GameObject.Find("Player");
-		
+		objects = new Queue ();
+			
 		//		Plane teoricPlane = new Plane(new Vector3(0,0,-1),new Vector3( 0, 0 , 55f));
 		Debug.Log("vec 3 up : " + Vector3.up);	
 		
@@ -65,6 +86,7 @@ public class BackgroundManager : MonoBehaviour {
 		startingPointX = leftMost.x;
 		for (int i =0 ; i < 10; i++ ) {
 			GameObject mountain = (GameObject) Instantiate(billBoard); 
+			mountain.tag = "ManagedBackground"; 
 			mountain.transform.parent = transform;
 //			List<Vector3> bundle = new List<Vector3>();
 //			if (!if
@@ -76,6 +98,8 @@ public class BackgroundManager : MonoBehaviour {
 	}
 	
 	public virtual void PlantPrefab(GameObject prefab){
+		//places the prefab in the right place!
+
 		//			terrain.transform.localScale = new Vector3(
 		//				Random.Range(.3f,1f) * terrain.transform.localScale.x ,
 		//				Random.Range(.3f,1f) * terrain.transform.localScale.y,
